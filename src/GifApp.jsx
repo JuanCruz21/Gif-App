@@ -1,4 +1,5 @@
 import { useState } from "react"
+import {AddCategory} from "./components/AddCategory"
 
 
 export const GifApp = () => {
@@ -6,13 +7,13 @@ export const GifApp = () => {
   console.log(categorias)
 
   const onAddCategory = ()=>{
-    setCategorias(categorias => categorias.concat("dato"))
+    setCategorias(categorias => categorias.concat())
   }
 
   return (
     <>
     <h1>Gif App</h1>
-    <input type="text" placeholder="Buscar gif"/>
+    <AddCategory onAddCategory />
     <button onClick={onAddCategory}>Agregar</button>
     <ol>
       {categorias.map(category =>{
