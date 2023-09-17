@@ -3,7 +3,7 @@ import {AddCategory} from "./components/AddCategory"
 import { AddGrid } from "./components/GridGif"
 
 export const GifApp = () => {
-  const [categorias, setCategorias] = useState(['One Punch', 'Drama'])
+  const [categorias, setCategorias] = useState(['One Punch'])
 
   const onAddCategory = (NewCategory)=>{
     //console.log(newCategory)
@@ -15,18 +15,22 @@ export const GifApp = () => {
   return (
     <>
     <h1>Gif App</h1>
+    <div>
     <AddCategory 
     //setCategorias={ setCategorias } 
     onNewCategory={ onAddCategory }
     />
-      {categorias.map(category =>{
+    </div>
+    <div>
+    {categorias.map(category =>{
         return (
         <div key={category} >
           <h3>{category}</h3>
           <AddGrid key={ category } category={ category }/>
         </div>
-        )
-      })}
+        )})
+      }
+    </div>
     </>
   )
 }
