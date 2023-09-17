@@ -1,25 +1,32 @@
 import { useState } from "react"
 import {AddCategory} from "./components/AddCategory"
-
+import { AddGrid } from "./components/GridGif"
 
 export const GifApp = () => {
   const [categorias, setCategorias] = useState(['One Punch', 'Drama'])
-  console.log(categorias)
 
-  const onAddCategory = ()=>{
-    setCategorias(categorias => categorias.concat())
+  const onAddCategory = (NewCategory)=>{
+    //console.log(newCategory)
+    //setCategorias((categorias) => categorias.concat())
+    if(categorias.includes(NewCategory)) return
+    setCategorias([NewCategory, ...categorias])
   }
 
   return (
     <>
     <h1>Gif App</h1>
-    <AddCategory onAddCategory />
-    <button onClick={onAddCategory}>Agregar</button>
-    <ol>
+    <AddCategory 
+    //setCategorias={ setCategorias } 
+    onNewCategory={ onAddCategory }
+    />
       {categorias.map(category =>{
-        return <li key={category}>{category}</li>
+        return (
+        <div key={category} >
+          <h3>{category}</h3>
+          <AddGrid key={ category } category={ category }/>
+        </div>
+        )
       })}
-    </ol>
     </>
   )
 }
