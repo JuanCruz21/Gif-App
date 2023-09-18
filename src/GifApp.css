@@ -53,6 +53,7 @@ input{
   
   .card p {
     background-color: white;
+    color: black;
     flex: 1;
     font-size: 1.5rem;
     margin-top: 5px;
