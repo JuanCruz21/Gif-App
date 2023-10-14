@@ -1,6 +1,5 @@
 import { useState } from "react"
-import {AddCategory} from "./components/AddCategory"
-import { AddGrid } from "./components/GridGif"
+import { AddGrid,AddCategory } from "./components"
 
 export const GifApp = () => {
   const [categorias, setCategorias] = useState(['One Punch'])

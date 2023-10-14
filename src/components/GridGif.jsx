@@ -1,6 +1,6 @@
 import { GifItem } from "./GifItem"
 import { useFetchGifs } from "../Hooks/useFetchGifs"
-import { Cargando } from "./Cargando"
+import { Cargando } from "."
 
 export const AddGrid = ({ category })=>{
 
